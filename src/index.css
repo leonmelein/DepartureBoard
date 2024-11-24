@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'TransitWeb-BoldW03';
-    src: url('TransitWeb-BoldW03-Regular.woff2') format('woff2'),
-        url('TransitWeb-BoldW03-Regular.woff') format('woff');
+    src: url('/TransitWeb-BoldW03-Regular.woff2') format('woff2'),
+        url('/TransitWeb-BoldW03-Regular.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
