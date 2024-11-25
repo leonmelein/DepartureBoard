@@ -1,22 +1,25 @@
 import PropTypes from 'prop-types';
-import './DepartureItem.css'
+import './TrainDeparture.css'
 import Metro from './assets/metro.svg'
 
-function Item({line="51", destination="Centraal Station", time="1 min"}){
-    let lineNumString = `M${line}`;
+function TrainDeparture({time="17:01", destination="Amersfoort Vathorst", formula="SPR"}){
+    // let lineNumString = `M${line}`;
     const expectedDeparture = new Date(time);
+    console.log(expectedDeparture);
     const currentTime = new Date();
+    console.log(currentTime);
     // Calculate the difference in milliseconds
     const diffInMs = expectedDeparture - currentTime;
+    console.log(diffInMs);
 
     // Convert milliseconds to minutes
     const diffInMinutes = Math.round(diffInMs / (1000 * 60));
 
-    if (diffInMinutes < 1 || line == "55") {
+    if (diffInMinutes < 1) {
         return (
             <div className='departure'>
-                <div className={`lineNumber m${line}`}>
-                    <p>{lineNumString}</p>
+                <div className={`lineNumber train`}>
+                    <p>{formula}</p>
                 </div>
                 <div className='destination'>{destination}</div>
                 <div className='timeLeft departureImminent'>
@@ -31,8 +34,8 @@ function Item({line="51", destination="Centraal Station", time="1 min"}){
 
     return (
         <div className='departure'>
-            <div className={`lineNumber m${line}`}>
-                <p>{lineNumString}</p>
+            <div className={`lineNumber train`}>
+                <p>{formula}</p>
             </div>
             <div className='destination'>{destination}</div>
             <div className='timeLeft'>{`${diffInMinutes} min`}</div> 
@@ -40,10 +43,10 @@ function Item({line="51", destination="Centraal Station", time="1 min"}){
     )
 }
 
-Item.propTypes = {
-    line: PropTypes.string.isRequired,
+TrainDeparture.propTypes = {
+    time: PropTypes.string.isRequired,
     destination: PropTypes.string.isRequired,
-    time: PropTypes.string.isRequired
+    formula: PropTypes.string.isRequired
 }
 
-export default Item
+export default TrainDeparture

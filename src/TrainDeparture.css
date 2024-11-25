@@ -1,0 +1,51 @@
+div.departure {
+    display: grid;
+    grid-template-columns: 7rem auto 12rem;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.lineNumber {
+    align-content: center;
+
+    p {
+        margin: auto;
+        font-weight: bold;
+        font-size: 3rem;
+        line-height: 1rem;
+        text-align: center;
+    }
+}
+
+.train {
+    background-color: #003082;
+    color: white;
+}
+
+.destination {
+    font-size: 3rem;
+    text-align: left;
+    font-weight: bold;
+    align-content: center;
+    padding-left: 0.7rem;
+}
+
+.timeLeft {
+    font-size: 3rem;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 0.1rem;
+    align-content: center;
+}
+
+.departing {
+    max-height: 3rem;
+    display: block;
+}
+
+.departureImminent {
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
