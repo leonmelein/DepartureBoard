@@ -12,12 +12,16 @@ function App() {
         fetch(stop)
         .then((data) => data.json())
         .then((data) => {
-                setDepartures(data)
+                var sortedData = data.sort((function (a, b) {
+                    return new Date(b.date) - new Date(a.date)
+                }));
+                setDepartures(sortedData)
             }
         )
     }
 
     useEffect(() => {
+        loadData();
         const timeoutId = setInterval(
             () => loadData(), 
             10000
