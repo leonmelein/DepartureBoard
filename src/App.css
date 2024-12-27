@@ -2,20 +2,38 @@
     height: 100vh;
     width: 100vw;
     background-color: rgb(85 85 90);
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.header {
+    margin: 0;
+    color: white;
 }
 
 .itemList {
-    padding: 1em;
+    margin-bottom: 1em;
 }
 
 .itemList :nth-child(even) {
-    .destination, .timeLeft {
+    .trainDeparture {
+        .destination, .timeLeft, .track {
+         background-color: #0079D3;
+        }
+    }
+}
+
+.itemList :nth-child(even) {
+    .destination, .timeLeft, .track {
         background-color: #ece6e6;
     }
 }
 
 .itemList :nth-child(odd) {
-    .destination, .timeLeft {
+    .destination, .timeLeft, .track {
         background-color: #ffffff;
     }
 }
+
+
+

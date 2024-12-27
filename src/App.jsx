@@ -57,13 +57,15 @@ function App() {
 
   return (
     <>
+        <h1 className='header'>Metro</h1>
         <div className='itemList'>
             {departures.map(item =>
             { return <MetroDeparture key={item.journeyNumber} line={item.publishedLineNumber} destination={item.destinationName} time={item.departureGroup.expectedDateTime} /> }
             )}
         </div>
+        <h1 className='header'>Trein</h1>
         <div className='itemList'>
-            {trainDepartures.map(item => { return <TrainDeparture key={item.name} line={item.product.categoryCode} destination={item.direction} time={item.actualDateTime} /> }
+              {trainDepartures.map(item => { return <TrainDeparture key={item.name} formula={item.product.categoryCode} destination={item.direction} time={item.actualDateTime} track={item.actualTrack} /> }
             )}
         </div>
     </>
