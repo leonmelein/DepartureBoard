@@ -1,0 +1,29 @@
+---
+- name: Copy file to target servers
+  hosts: all
+  tasks:
+    # Ensure website folder exists
+    - name: Ensure subfolder exists
+      ansible.builtin.file:
+        path: /www/departures
+        owner: github-actions
+        group: www-data
+        state: directory
+        mode: '0775'
+
+    - name: Copy files
+      ansible.builtin.copy:
+        src: "../{{ repositoryPath }}/"
+        dest: /www/departures
+        mode: '0644'
+
+- name: Restart nginx
+  hosts: all
+  become: true
+  tasks:
+    - name: Restart nginx service
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+
+    # Handle certificates
