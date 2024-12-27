@@ -15,8 +15,6 @@
       ansible.builtin.copy:
         src: "../{{ repositoryPath }}/"
         dest: /www/departures
-        owner: github-actions
-        group: www-data
         mode: '0644'
 
 - name: Restart nginx
