@@ -23,12 +23,7 @@ function TrainDeparture({time="17:01", destination="Amersfoort Vathorst", formul
                 </div>
                 <div className='destination'>{destination}</div>
                 <div className='track'>{track}</div>
-                <div className='timeLeft departureImminent'>
-                    <img src={Metro} className={'departing'}/>
-                    <img src={Metro} className={'departing'} />
-                    <img src={Metro} className={'departing'} />
-                    <img src={Metro} className={'departing'} />
-                </div>
+                <div className='timeLeft'>{'< 1 min'}</div>
             </div>
         )   
     }
